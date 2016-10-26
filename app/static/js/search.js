@@ -11,12 +11,12 @@ var init = {
 
 btSearch.addEventListener('click', search);
 function search() {
-    fetch('http://7xj431.com1.z0.glb.clouddn.com/tt.gif', init)
+    fetch('http://127.0.0.1:5000/sid/', init)
     .then(function (res) {
-        return res.blob();
+        return res.json();
     })
-    .then(function (blob) {
-        var objectURL = URL.createObjectURL(blob);
-        image.src = objectURL;
+    .then(function (json) {
+        sids = json.get('sids');
+        alert(sids.join());
     });
 }

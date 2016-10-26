@@ -9,4 +9,4 @@ from flask import jsonify, request
 def from_name_get_sid():
     name = request.args.get("name")
     sids = eval(rds.hget('info', name))
-    return jsonify(sids)
+    return jsonify({'sids': sids})
