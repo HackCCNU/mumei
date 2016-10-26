@@ -5,8 +5,14 @@ from flask import render_template
 
 urlprefix = os.getenv("MUMEIURLPRE")
 
+
 @app.route('/')
-def index():
+def login():
+    return render_template('index.html')
+
+
+@app.route('/xo/')
+def xo():
     name_urls = {}
     # name_sids = rds.hgetall('info')
     names = rds.hkeys('info')
@@ -16,4 +22,4 @@ def index():
             url = urlprefix.format(sid=sid)
             urls.append(url)
         name_urls[name] = urls
-    return render_template('index.html', name_urls=name_urls)
+    return render_template('xo.html', name_urls=name_urls)
