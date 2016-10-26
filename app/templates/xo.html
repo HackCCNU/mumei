@@ -1,15 +1,33 @@
-<!DOCTYPE>
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        {% for name in name_urls %}
-            <h3>{{ name.decode('utf-8') }}</h3>
-            {% for url in name_urls[name] %}
-                <img src={{ url }}>
-            {% endfor %}
-            <h4>"------------------------"</h4>
-        {% endfor %}
-    </body>
-</html>
+{% extends "base.html" %}
+{% block body %}
+<div class="main container">
+    </br></br>
+    <a href="/"><< back to home</a>
+    <h1>CCNU Central Picture Database⚡️ Search</h1>
+    <fieldset class="form-group form-success">
+        <label for="name">Name:</label>
+        <input id="name" type="text" placeholder="" class="form-control">
+        <button class="btn btn-warning btn-ghost" id="btSearch">Search</button>
+        <div class="help-block">搜同学的名字->get照片info</div>
+    </fieldset>
+    {#% for i in range(1) %#}
+    <div class="media">
+        <div class="media-left">
+            <li>
+                <img src="http://7xj431.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-26%20%E4%B8%8B%E5%8D%882.28.18.png" height="200px" width="200px"/>
+            </li>
+        </div>
+        <div class="media-body">
+            <div class="media-heading">菲布理 @2013142233</div>
+            <div class="media-content">
+                <hr/>
+                <li>
+                    - 专业: 木犀专业 <br/>
+                    - 爱吃: 华中师范大学/后勤集团/饮食中心/学子餐厅/一楼/棒棒糖 <br/>
+                </li>
+            </div>
+        </div>
+    </div>
+    {#% endfor %#}
+</div>
+{% endblock %}

@@ -1,8 +1,18 @@
 # 无名
 
-> 搜华师人->照片
+> CCNU Central Picture Database
 
-## 学长, 我很好奇...
-## status: 爬虫奋力爬取中, 绞尽脑汁写前端
-## 使用
-## FUCK CCNU
++ [project index ⚡️ ]()
+
+## about this project
+Just curious and fun.
+
+## Thanks
+
++ technology
+    + [hack.css]()
+    + [flask]()
+    + [fetch]()
++ people
+    + [@zxc0328]()
+    + [@2bab]()

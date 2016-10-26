@@ -5,7 +5,7 @@ import requests
 
 # rds-存储爬虫爬取学号、姓名信息
 # info: {name: [sid]}
-rds = redis.StrictRedis(host="redis", port=6389, db=0)
+rds = redis.StrictRedis(host="localhost", port=6389, db=0)
 # url-爬取的源地址, thanks@2bab
 url = os.getenv("MUMEIURL")
 
