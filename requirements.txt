@@ -1,0 +1,7 @@
+flask
+mana
+flask-script
+flask-wtf
+redis
+requests
+gunicorn

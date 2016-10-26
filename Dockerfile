@@ -1,0 +1,12 @@
+FROM python:2.7
+MAINTAINER neo1218 <neo1218@yeah.net>
+
+ENV DEPLOY_PATH /mumei
+
+RUN mkdir -p $DEPLOY_PATH
+WORKDIR $DEPLOY_PATH
+
+Add requirements.txt requirements.txt
+RUN pip install --index-url http://pypi.doubanio.com/simple/ -r requirements.txt --trusted-host=pypi.doubanio.com
+
+Add . .

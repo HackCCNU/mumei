@@ -1,0 +1,26 @@
+# app
+app:
+    build: .
+    env_file:
+        - mumei.env
+    command: gunicorn --name mumei -b 0.0.0.0:4399 -w 2 wsgi:app
+    ports:
+        - "4399:4399"
+    links:
+        - redis
+
+# spider
+spider:
+    build: .
+    env_file: 
+        - mumei.env
+    command: python ./spider/spider.py
+    links:
+        - redis
+
+# redis
+redis:
+    image: redis
+    command: redis-server --port 6389
+    ports:
+        - "6389:6389"
