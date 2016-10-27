@@ -1,10 +1,10 @@
 var btSearch = document.getElementById("btSearch");
-var header = new Headers({
-    "Content-Type": "application/json",
-});
+// var header = new Headers({
+//     "Content-Type": "application/json",
+// });
 var init = {
     method: 'GET',
-    headers: header,
+//     headers: header,
     mods: 'no-cors',
     cache: 'default'
 }
