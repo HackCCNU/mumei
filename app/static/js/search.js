@@ -13,7 +13,7 @@ btSearch.addEventListener('click', search);
 function search() {
     // 接受表单提供的数据
     var name = document.getElementById("name").value;
-    fetch('http://192.168.99.100:4399/api/sid/?name='+name, init)
+    fetch('http://p.muxixyz.com/api/sid/?name='+name, init)
     .then(function (res) {
         return res.json();
     })
