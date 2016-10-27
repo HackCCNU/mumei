@@ -10,3 +10,5 @@ app.config['SECRET_KEY'] = 'your secret key is here'
 
 from api import api
 app.register_blueprint(api, url_prefix="/api")
+
+from . import views

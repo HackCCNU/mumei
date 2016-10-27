@@ -1,22 +1,33 @@
 var btSearch = document.getElementById("btSearch");
-var imageF = document.getElementsByClassName("media-left");
-var image = document.querySelector('img');
-// var header = new Headers();
+var header = new Headers({
+    "Content-Type": "application/json",
+});
 var init = {
     method: 'GET',
-//    headers: header,
+    headers: header,
     mods: 'no-cors',
     cache: 'default'
 }
 
 btSearch.addEventListener('click', search);
 function search() {
-    fetch('http://127.0.0.1:5000/sid/', init)
+    // 接受表单提供的数据
+    var name = document.getElementById("name").value;
+    fetch('http://192.168.99.100:4399/api/sid/?name='+name, init)
     .then(function (res) {
         return res.json();
     })
     .then(function (json) {
-        sids = json.get('sids');
-        alert(sids.join());
+        sids = json.sids;
+        $("#xoimg").empty();
+        for(var i=0, l=sids.length; i<l; i++) {
+            // var img = document.createElement('img');
+            var sid = sids[i]['sid'];           // 学号
+            var deptName = sids[i]['deptName']; // 专业
+            var orgName = sids[i]['orgName'];   // 爱吃
+            var src = "http://xssw.ccnu.edu.cn:8001/xgxt/xsxx_xsgl.do?method=showPhoto&xh=" + sid;
+            var _code = '<div class="media"><div class="media-left"><img src='+src+' height="200px" width="200px"></div><div class="media-body"><div class="media-heading">'+name+' @'+sid+'</div><div class="media-content"><hr/><li>-专业: '+deptName+'<br/>-爱吃: '+ orgName +'</li></div></div></div>';
+            $("#xoimg").append(_code);
+        }
     });
 }
