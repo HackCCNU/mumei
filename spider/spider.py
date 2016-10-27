@@ -20,7 +20,6 @@ def spider(start, end):
     """
     for sid in range(int(start), int(end)):
         # cout << "fuck %s" % sid 
-        print "fuck %s\n" % sid
         r = requests.get(url.format(sid=str(sid)))
         if r.json() is None:
             continue
@@ -32,15 +31,16 @@ def spider(start, end):
                 sids.append(sid)
         rds.hset('info', name, str(sids))
         rds.save()
-        print "%s done!\n" % sid
+        print "fuck %s\n" % sid
+    print "%s done!\n" % sid
 
 def start():
     """
     启动爬虫
     """
-    starts = ["2014210001", "2016210001", "2015210001", "2013210001"]
+    starts = ["2014211517", "2016213417", "2015210001", "2013210001"]
     ends = ["2014214841", "2016214643", "2015214781", "2013214858"]
-    for i in range(4):
+    for i in range(1, 4):
         spider(starts[i], ends[i])
 
 if __name__ == '__main__':
