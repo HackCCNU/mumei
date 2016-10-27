@@ -28,7 +28,8 @@ def spider(start, end):
         sids = [sid]
         if name in rds.hkeys('info'):
             sids = eval(rds.hget('info', name))
-            sids.append(sid)
+            if sid not in sids:
+                sids.append(sid)
         rds.hset('info', name, str(sids))
         rds.save()
         print "%s done!\n" % sid
@@ -37,8 +38,8 @@ def start():
     """
     启动爬虫
     """
-    starts = ["2014010001", "2016010001", "2015010001", "2013210001"]
-    ends = ["2014214841", "2016214641", "2015214781", "2013214858"]
+    starts = ["2014210001", "2016210001", "2015210001", "2013210001"]
+    ends = ["2014214841", "2016214643", "2015214781", "2013214858"]
     for i in range(4):
         spider(starts[i], ends[i])
 

@@ -4,11 +4,6 @@
 
 + [project index ⚡️ ](http://pic.muxixyz.com)
 
-## About this project
-Just curious and fun. <br/>
-学长... 我很好奇:) 这个项目就是一次hack, 只是为了好玩, 如果涉及隐私,
-对此表示抱歉:(<br/>
-
 ## How 2 use
 ### 1.请先登录
 跳转登录华中师范大学信息服务平台
@@ -22,6 +17,45 @@ Just curious and fun. <br/>
 + 爱吃什么...
 
 你还可以知道和你重名的同学,, 长啥样.....<br/>
+
+## How 2 run
+### python develop server
+**1.设置环境变量** <br/>
+
++ MUMEIURL: console api url
++ MUMEIURLPRE: photo url
++ REDISHOST: redis server host
+
+**2.启动** <br/>
+启动server
+
+    $ python manage.py runserver
+
+启动爬虫
+
+    $ python spider/spider.py
+
+### gunicorn server in docker
+**1.设置环境变量文件** <br/>
+mumei.env
+
+    MUMEIURL=console api url
+    MUMEIURLPRE=photo url
+    REDISHOST=redis server host
+
+**2.启动**<br/>
+启动server
+
+    $ docker-compose up -d app
+
+启动爬虫
+
+    $ docker-compose up -d spider
+
+## About this project
+Just curious and fun. <br/>
+学长... 我很好奇:) 这个项目就是一次hack, 只是为了好玩, 如果涉及隐私,
+对此表示抱歉:(<br/>
 
 ## License(WTFPL)
 
