@@ -2,9 +2,9 @@
 
 > CCNU Central Picture Database
 
-+ [project index ⚡️ ](http://pic.muxixyz.com)
++ [project index ⚡️ ](http://p.muxixyz.com)
 
-## How 2 use
+## ⚡️ How 2 use
 ### 1.请先登录
 跳转登录华中师范大学信息服务平台
 
@@ -17,8 +17,9 @@
 + 爱吃什么...
 
 你还可以知道和你重名的同学,, 长啥样.....<br/>
+目前爬了 **2016**, **2015**, **2014**, **2013** 级😄 <br/>
 
-## How 2 run
+## ⚡️ How 2 run
 ### python develop server
 **1.设置环境变量** <br/>
 
@@ -52,12 +53,13 @@ mumei.env
 
     $ docker-compose up -d spider
 
-## About this project
+## ⚡️ About this project
 Just curious and fun. <br/>
 学长... 我很好奇:) 这个项目就是一次hack, 只是为了好玩, 如果涉及隐私,
 对此表示抱歉:(<br/>
+this is life, this is love<br/>
 
-## License(WTFPL)
+## ⚡️ License(WTFPL)
 
 
     (The WTFPL)
