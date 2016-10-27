@@ -42,7 +42,7 @@ def start():
     ends = ["2014214841", "2016214643", "2015214781", "2013214858"]
     # for i in range(1, 4):
     #     spider(starts[i], ends[i])
-    spider(2015210020, 2015214781)
+    spider("2013210001", "2013214858")
 
 if __name__ == '__main__':
     start()
