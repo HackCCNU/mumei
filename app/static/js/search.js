@@ -28,7 +28,7 @@ function search() {
             var src = "http://xssw.ccnu.edu.cn:8001/xgxt/xsxx_xsgl.do?method=showPhoto&xh=" + sid;
             var _code = '<div class="media"><div class="media-left"><img src='+src+' height="200px" width="200px"></div><div class="media-body"><div class="media-heading">'+name+' @'+sid+'</div><div class="media-content"><hr/><li>-专业: '+deptName+'<br/>-爱吃: '+ orgName +'</li></div></div></div>';
             $("#xoimg").append(_code);
-            alert("done!");
+            alert("准备亮瞎你的🐶 眼!");
         }
     });
 }
