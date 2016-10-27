@@ -12,11 +12,11 @@ var init = {
 btSearch.addEventListener('click', search);
 function search() {
     // 接受表单提供的数据
+    var img = document.getElementsByTagName("img")[0];
+    img.src = "http://7xj431.com1.z0.glb.clouddn.com/tt.gif"
     var name = document.getElementById("name").value;
     fetch('http://p.muxixyz.com/api/sid/?name='+name, init)
     .then(function (res) {
-        var img = document.getElementsByTagName("img");
-        img.src = "http://7xj431.com1.z0.glb.clouddn.com/tt.gif"
         return res.json();
     })
     .then(function (json) {

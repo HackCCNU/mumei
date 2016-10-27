@@ -25,13 +25,13 @@ def spider(start, end):
             continue
         name = r.json()[-1].get('userName')
         sids = [sid]
-        if name in rds.hkeys('info'):
+        if name.encode("utf-8") in rds.hkeys('info'):
             sids = eval(rds.hget('info', name))
             if sid not in sids:
                 sids.append(sid)
         rds.hset('info', name, str(sids))
         rds.save()
-        print "fuck %s\n" % sid
+        print "fuck %s\n" % str(sids)
     print "%s done!\n" % sid
 
 def start():
@@ -42,7 +42,7 @@ def start():
     ends = ["2014214841", "2016214643", "2015214781", "2013214858"]
     # for i in range(1, 4):
     #     spider(starts[i], ends[i])
-    spider("2013210001", "2013214858")
+    spider(2015212000, 2015212999)
 
 if __name__ == '__main__':
     start()
